@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif; /* Set default font for all elements */
+}
+
+body {
+    background-color: #003366; /* Dark Navy */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 900px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    background-image: linear-gradient(135deg, #094a46 0%, #00b4db 100%); /* Dark Navy to Light Mint Green */
+    position: relative;
+    padding: 20px;
+}
+
+.landing-page,
+.story,
+.quiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px rgb(100, 100, 100);
+}
+
+.landing-page {
+    height: 700px;
+}
+
+.landing-page>img {
+    width: 90px;
+}
+
+.landing-page>h1 {
+    font-size: 80px;
+}
+
+.line {
+    width: 200px;
+    margin-top: 5px;
+    border: 1px solid rgb(89, 56, 196);
+}
+
+.landing-page>p {
+    font-size: 20px;
+    margin: 100px 10px 30px 10px;
+}
+
+.landing-page>button,
+.category-options>button,
+.quiz > button,
+.option {
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    width: 300px;
+    border-radius: 10px;
+    font-size: 25px;
+    border: none;
+    background-image: linear-gradient(to right, #094a46 0%, #00b4db 100%); /* Dark Teal to Light Mint Green */
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.landing-page>button:hover,
+.category-options>button:hover,
+.quiz>button:hover,
+.option:hover {
+    background-image: linear-gradient(to left, #094a46 0%, #00b4db 100%); /* Dark Teal to Light Mint Green on hover */
+}
+
+.category-options, #options-container {
+    margin-top: 40px;
+}
+
+.game-category > h1 {
+    font-size: 40px;
+}
+
+.quiz>h2 {
+    font-size: 27px;
+    margin: 10px;
+}
+
+.option {
+    background-image: linear-gradient(120deg, #094a46 0%, #00b4db 100%); /* Lighter Navy to Mint Green */
+    width: 500px;
+    font-size: 20px;
+}
+
+.restart-game {
+    position: absolute;
+    bottom: 20px;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    width: 300px;
+    border-radius: 10px;
+    font-size: 27px;
+    border: none;
+    background-image: linear-gradient(to right, #094a46 0%, #00b4db 100%); /* Dark Teal to Light Mint Green */
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.country-option {
+    background-image: linear-gradient(120deg, #094a46 0%, #00b4db 100%); /* Lighter Navy to Mint Green */
+    width: calc(50% - 20px); /* Two options per row with some spacing */
+    font-size: 20px;
+    margin: 10px; /* Margin between buttons */
+    padding: 10px; /* Padding for button */
+}
+
+.country-selection {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to create rows */
+    justify-content: center; /* Center align buttons */
+    width: 100%;
+}
