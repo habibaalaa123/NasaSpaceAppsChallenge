@@ -19,54 +19,154 @@ const countries = [
 
 const questions = [
     {
-        question: "What is Net Biosphere Exchange (NBE)?",
+        question: "What is better for the environment?",
         options: [
-            "The rate of carbon uptake minus emissions from ecosystems.",
-            "The amount of oxygen produced by plants.",
-            "The total biomass in an ecosystem.",
-            "The carbon stored in soils."
+            "Driving a car",
+            "Riding a bicycle",
+            "Taking a taxi",
+            "Using a motorcycle"
         ],
-        correctAnswer: "The rate of carbon uptake minus emissions from ecosystems."
+        correctAnswer: "Riding a bicycle"
     },
     {
-        question: "When is the highest NBE observed in North America?",
+        question: "Which energy source is the cleanest?",
         options: [
-            "March",
-            "July",
-            "November",
-            "January"
+            "Coal",
+            "Solar",
+            "Natural Gas",
+            "Oil"
         ],
-        correctAnswer: "November"
+        correctAnswer: "Solar"
     },
     {
-        question: "What does NPP stand for?",
+        question: "Which food has the highest carbon emissions?",
         options: [
-            "Net Primary Production",
-            "Nitrogen Production Process",
-            "Natural Plant Photosynthesis",
-            "Net Production of Plants"
+            "Chicken",
+            "Beef",
+            "Lentils",
+            "Rice"
         ],
-        correctAnswer: "Net Primary Production"
+        correctAnswer: "Beef"
     },
     {
-        question: "During which season does NPP peak in North America?",
+        question: "What type of home saves the most energy?",
         options: [
-            "Spring",
-            "Winter",
-            "Fall",
-            "Summer"
+            "Traditional home with high energy usage",
+            "Energy-efficient home",
+            "Old drafty house",
+            "Shack without insulation"
         ],
-        correctAnswer: "Summer"
+        correctAnswer: "Energy-efficient home"
     },
     {
-        question: "What causes high photosynthesis rates in July?",
+        question: "What can you do to help reduce waste?",
         options: [
-            "Warm temperatures and full leaf coverage.",
-            "Low rainfall.",
-            "Cold temperatures.",
-            "High carbon emissions."
+            "Recycle plastic bottles",
+            "Throw everything in the trash",
+            "Buy more stuff",
+            "Use disposable plates"
         ],
-        correctAnswer: "Warm temperatures and full leaf coverage."
+        correctAnswer: "Recycle plastic bottles"
+    },
+    {
+        question: "How can using less water help the planet?",
+        options: [
+            "It saves energy",
+            "It has no effect",
+            "It increases emissions",
+            "It makes you thirsty"
+        ],
+        correctAnswer: "It saves energy"
+    },
+    {
+        question: "What is a renewable energy source?",
+        options: [
+            "Wind",
+            "Coal",
+            "Natural Gas",
+            "Nuclear"
+        ],
+        correctAnswer: "Wind"
+    },
+    {
+        question: "Which is the best way to travel short distances?",
+        options: [
+            "Walking",
+            "Driving a car",
+            "Taking a bus",
+            "Using a helicopter"
+        ],
+        correctAnswer: "Walking"
+    },
+    {
+        question: "What should you do with leftover food?",
+        options: [
+            "Throw it away",
+            "Eat it or share it",
+            "Let it spoil",
+            "Feed it to pets"
+        ],
+        correctAnswer: "Eat it or share it"
+    },
+    {
+        question: "Which of these helps save energy?",
+        options: [
+            "Leaving lights on",
+            "Using energy-efficient bulbs",
+            "Using more appliances",
+            "Keeping the fridge open"
+        ],
+        correctAnswer: "Using energy-efficient bulbs"
+    },
+    {
+        question: "What is a good way to reduce plastic use?",
+        options: [
+            "Using reusable bags",
+            "Buying bottled water",
+            "Using plastic straws",
+            "Throwing trash on the ground"
+        ],
+        correctAnswer: "Using reusable bags"
+    },
+    {
+        question: "How can you reduce your carbon footprint when shopping?",
+        options: [
+            "Buying local products",
+            "Shopping online",
+            "Using plastic bags",
+            "Buying imported goods"
+        ],
+        correctAnswer: "Buying local products"
+    },
+    {
+        question: "What can you do to save energy at home?",
+        options: [
+            "Using appliances during the day",
+            "Unplugging devices when not in use",
+            "Keeping windows open in winter",
+            "Using incandescent bulbs"
+        ],
+        correctAnswer: "Unplugging devices when not in use"
+    },
+    {
+        question: "How does carpooling help the environment?",
+        options: [
+            "Increases traffic",
+            "Reduces the number of cars on the road",
+            "Makes it harder to travel",
+            "Costs more money"
+        ],
+        correctAnswer: "Reduces the number of cars on the road"
+    },
+    {
+        question: "Which practice helps in conserving water?",
+        options: [
+            "Taking long showers",
+            "Fixing leaky faucets",
+            "Watering plants during the day",
+            "Using a hose to wash the car"
+        ],
+        correctAnswer: "Fixing leaky faucets"
     }
 ];
 

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Solar system as if it's an atom [now responsive]</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <style>
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-size: 5.5vmin;
+    }
+
+    .scene {
+      height: 100%;
+      background: #10151a;
+      perspective: 350px;
+    }
+
+    .start-button {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px 30px;
+      font-size: 2em;
+      color: #fff;
+      background-color: rgba(0, 150, 255, 0.7);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10; /* Ensure the button is above the solar system */
+      transition: background-color 0.3s ease;
+    }
+
+    .start-button:hover {
+      background-color: rgba(0, 150, 255, 1);
+    }
+
+    html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-size: 5.5vmin;
+}
+
+.scene {
+  height: 100%;
+  background: #10151a;
+  perspective: 350px;
+}
+.scene .system {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 0.25em;
+  border-radius: 100%;
+}
+.scene .orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(127, 255, 255, 0.1);
+  box-shadow: 0 0 75em rgba(0, 255, 255, 0.05);
+  border-radius: 100%;
+  transform-style: preserve-3d;
+}
+.scene .orbit:nth-child(0) {
+  width: 0em;
+  height: 0em;
+  -webkit-animation: orbit 0s linear infinite;
+          animation: orbit 0s linear infinite;
+}
+.scene .orbit:nth-child(0) .sphere {
+  -webkit-animation: counter-rotation 0s linear infinite;
+          animation: counter-rotation 0s linear infinite;
+}
+.scene .orbit:nth-child(1) {
+  width: 35em;
+  height: 35em;
+  -webkit-animation: orbit 2.4s linear infinite;
+          animation: orbit 2.4s linear infinite;
+}
+.scene .orbit:nth-child(1) .sphere {
+  -webkit-animation: counter-rotation 2.4s linear infinite;
+          animation: counter-rotation 2.4s linear infinite;
+}
+.scene .orbit:nth-child(2) {
+  width: 70em;
+  height: 70em;
+  -webkit-animation: orbit 9.6s linear infinite;
+          animation: orbit 9.6s linear infinite;
+}
+.scene .orbit:nth-child(2) .sphere {
+  -webkit-animation: counter-rotation 9.6s linear infinite;
+          animation: counter-rotation 9.6s linear infinite;
+}
+.scene .orbit:nth-child(3) {
+  width: 105em;
+  height: 105em;
+  -webkit-animation: orbit 21.6s linear infinite;
+          animation: orbit 21.6s linear infinite;
+}
+.scene .orbit:nth-child(3) .sphere {
+  -webkit-animation: counter-rotation 21.6s linear infinite;
+          animation: counter-rotation 21.6s linear infinite;
+}
+.scene .orbit:nth-child(4) {
+  width: 140em;
+  height: 140em;
+  -webkit-animation: orbit 38.4s linear infinite;
+          animation: orbit 38.4s linear infinite;
+}
+.scene .orbit:nth-child(4) .sphere {
+  -webkit-animation: counter-rotation 38.4s linear infinite;
+          animation: counter-rotation 38.4s linear infinite;
+}
+.scene .orbit:nth-child(5) {
+  width: 175em;
+  height: 175em;
+  -webkit-animation: orbit 60s linear infinite;
+          animation: orbit 60s linear infinite;
+}
+.scene .orbit:nth-child(5) .sphere {
+  -webkit-animation: counter-rotation 60s linear infinite;
+          animation: counter-rotation 60s linear infinite;
+}
+.scene .orbit:nth-child(6) {
+  width: 210em;
+  height: 210em;
+  -webkit-animation: orbit 86.4s linear infinite;
+          animation: orbit 86.4s linear infinite;
+}
+.scene .orbit:nth-child(6) .sphere {
+  -webkit-animation: counter-rotation 86.4s linear infinite;
+          animation: counter-rotation 86.4s linear infinite;
+}
+.scene .orbit:nth-child(7) {
+  width: 245em;
+  height: 245em;
+  -webkit-animation: orbit 117.6s linear infinite;
+          animation: orbit 117.6s linear infinite;
+}
+.scene .orbit:nth-child(7) .sphere {
+  -webkit-animation: counter-rotation 117.6s linear infinite;
+          animation: counter-rotation 117.6s linear infinite;
+}
+.scene .orbit:nth-child(8) {
+  width: 280em;
+  height: 280em;
+  -webkit-animation: orbit 153.6s linear infinite;
+          animation: orbit 153.6s linear infinite;
+}
+.scene .orbit:nth-child(8) .sphere {
+  -webkit-animation: counter-rotation 153.6s linear infinite;
+          animation: counter-rotation 153.6s linear infinite;
+}
+.scene .orbit:nth-child(9) {
+  width: 315em;
+  height: 315em;
+  -webkit-animation: orbit 194.4s linear infinite;
+          animation: orbit 194.4s linear infinite;
+}
+.scene .orbit:nth-child(9) .sphere {
+  -webkit-animation: counter-rotation 194.4s linear infinite;
+          animation: counter-rotation 194.4s linear infinite;
+}
+.scene .orbit:nth-child(10) {
+  width: 350em;
+  height: 350em;
+  -webkit-animation: orbit 240s linear infinite;
+          animation: orbit 240s linear infinite;
+}
+.scene .orbit:nth-child(10) .sphere {
+  -webkit-animation: counter-rotation 240s linear infinite;
+          animation: counter-rotation 240s linear infinite;
+}
+.scene .orbit .orbit {
+  left: 0;
+}
+.scene .sphere {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 3em;
+  height: 3em;
+  transform: translate(-50%, -50%);
+  background: currentColor;
+  border-radius: 100%;
+  text-indent: -99999px;
+}
+.scene .top-most-orbit {
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+.scene .top-most-orbit > .sphere {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+
+@-webkit-keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) rotateX(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(1440deg) rotateX(360deg);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) rotateX(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(1440deg) rotateX(360deg);
+  }
+}
+@-webkit-keyframes counter-rotation {
+  from {
+    transform: translate(-50%, -50%) rotateX(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotateX(-360deg);
+  }
+}
+@keyframes counter-rotation {
+  from {
+    transform: translate(-50%, -50%) rotateX(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotateX(-360deg);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="scene"></div>
+  <button class="start-button">Start</button>
+
+  <script src="./script.js"></script>
+  <script>
+  var SPHERE_CLASS = c => `class="sphere ${c || ''}"`;
+var SYSTEM_CLASS = c => `class="system ${c || ''}"`;
+var ORBIT_CLASS = c => `class="orbit ${c || ''}"`;
+
+function orbitTemplate(object, depth = 1) {
+  var heading = `h${depth}`;
+  var list = depth % 2 ? 'ul' : 'ol';
+  var style = `style="color: ${object[0].color || '#BDC5C7'}"`;
+  return `
+    <${heading} ${style} ${SPHERE_CLASS()}>${object[0].name}</${heading}>
+    ${object[1] ? `
+      <${list} ${SYSTEM_CLASS()}>
+        ${object[1].reduce((a, child) => a + `
+          <li ${ORBIT_CLASS()}>${orbitTemplate(child, depth + 1)}</li>
+        `, '')}
+      </${list}>
+    ` : ''}
+  `;
+}
+
+function solarSystemData() {
+  return [{ name: 'Sun', color: '#FDE528' }, [
+  [{ name: 'Mercury', color: '#C1B4AC' }],
+  [{ name: 'Venus', color: '#F2D299' }],
+  [{ name: 'Earth', color: '#05f' }, [
+  [{ name: 'Moon', color: '' }]]],
+
+  [{ name: 'Mars', color: '#E67E5A' }, [
+  [{ name: 'Phobos', color: '' }],
+  [{ name: 'Deimos', color: '' }]]],
+
+  [{ name: 'Jupiter', color: '#C5AA96' }, [
+  [{ name: 'Io', color: '' }],
+  [{ name: 'Europa', color: '' }],
+  [{ name: 'Ganymede', color: '' }],
+  [{ name: 'Callisto', color: '' }]]],
+
+  [{ name: 'Saturn', color: '#AF9D8E' }, [
+  [{ name: 'Mimas', color: '' }],
+  [{ name: 'Enceladus', color: '' }],
+  [{ name: 'Tethys', color: '' }],
+  [{ name: 'Dione', color: '' }],
+  [{ name: 'Rhea', color: '' }],
+  [{ name: 'Titan', color: '' }],
+  [{ name: 'Iapetus', color: '' }]]],
+
+  [{ name: 'Uranus', color: '#C2E8EA' }, [
+  [{ name: 'Miranda', color: '' }],
+  [{ name: 'Ariel', color: '' }],
+  [{ name: 'Umbriel', color: '' }],
+  [{ name: 'Titania', color: '' }],
+  [{ name: 'Oberon', color: '' }]]],
+
+  [{ name: 'Neptune', color: '#5C92F0' }, [
+  [{ name: 'Triton', color: '' }]]]]];
+
+
+}
+
+document.
+querySelector('.scene').
+innerHTML = `
+    <ul ${SYSTEM_CLASS()}>
+      <li ${ORBIT_CLASS('top-most-orbit')}>
+        ${orbitTemplate(solarSystemData())}
+      </li>
+    </ul>
+  `;
+    
+  </script>
+</body>
+</html>
+<div class="scotch-container">
+  <nav>
+    <a href="#">CONTACT</a>
+    <a href="#">ABOUT</a>
+    <a href="https://www.amazon.com/-/es/Scotch-Cinta-blanco-T-120-est%C3%A1ndar/dp/B008C7Z54Y" class="buy">BUY NOW</a>
+  </nav>
+  <div class="main-container">
+    <div class="text-sphere-container">
+      <div class="text-container">
+        <h1>Scotch</h1>
+        <h2>VIDEOCASSETTE EG</h2>
+        <h3>T 120</h3>
+        <p>Designed by the inventors of videotape, this Scotch EG Videocasette gives your superior performance</p>
+        <a href="https://www.amazon.com/-/es/Scotch-Cinta-blanco-T-120-est%C3%A1ndar/dp/B008C7Z54Y" class="buy-cta">Buy Now</a>
+      </div>
+      <a href="https://www.amazon.com/-/es/Scotch-Cinta-blanco-T-120-est%C3%A1ndar/dp/B008C7Z54Y">
+        <div class="sphere"></div>
+      </a>
+    </div>
+    <div class="learn-arrow">
+      <div class="learn">LEARN MORE</div>
+      <div class="arrow">🢓</div>
+    </div>
+  </div>
+</div>
