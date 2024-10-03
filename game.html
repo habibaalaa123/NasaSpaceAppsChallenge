@@ -7,7 +7,7 @@
   <title>Climate Story</title>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
     :root {
       --dark-color: #191f1d;
       --mid-dark: #555a57;
@@ -37,7 +37,7 @@
 
     h1 {
       margin: 0;
-      font-family: "Mulish", sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 1000;
       font-size: 64px;
       color: var(--light-color);
@@ -58,7 +58,7 @@
     }
 
     p {
-      font-family: "Mulish", sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-weight: 700;
       width: 390px;
       color: var(--mid-light);
@@ -78,8 +78,8 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-size: 12px;
-      font-family: "Mulish", sans-serif;
+      font-size: 15px;
+      font-family: 'Rubik', sans-serif;
       color: var(--mid-light);
       font-weight: 400;
       text-decoration: none;
@@ -87,12 +87,13 @@
     }
 
     a:not(.buy, .buy-cta, .learn) {
-      width: 64px;
+      width: 100px;
     }
 
     a:hover:not(.buy, .buy-cta, .learn) {
       transition: all 0.2s ease-in-out;
       font-weight: 900;
+      color: white;
       text-shadow: 0 0 8px var(--light-color);
     }
 
@@ -301,9 +302,8 @@
 <body>
   <div class="scotch-container">
     <nav>
-      <a href="#">Start</a>
-      <a href="#">Story</a>
-      <a href="#">Home</a>
+      <a href="maleQ.html">Start</a>
+      <a href="terratales.html">Home</a>
     </nav>
     <div class="main-container">
       <div class="text-sphere-container">
@@ -337,7 +337,7 @@
         </a>
       </div>
       <div class="learn-arrow">
-        <div class="learn">Back to story</div>
+        <div class="learn"> <a href="terratales.html"> Back to story </a></div>
         <div class="arrow">🢓</div>
       </div><!-- Gender selection form -->
      
