@@ -94,7 +94,7 @@
 
 /* Make image disappear and show text when the button is pressed or focused */
 .map-point:active,
-.map-point:focus {
+.map-point:hover {
     width: 300px;
     height: 220px;
     z-index: 1;
@@ -104,7 +104,7 @@
 }
 
 .map-point:active .content,
-.map-point:focus .content {
+.map-point:hover .content {
     opacity: 1; /* Show text when active/focused */
 }
 
@@ -529,13 +529,82 @@
             font-size: 1.5rem;
             color: #ffffff;
         }
-        
+        nav {
+        background-color: #00322e; /* Navbar background color */
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky; /* Sticky positioning */
+        top: 0; /* Sticks the navbar to the top of the page */
+        z-index: 1000; /* Ensures the navbar stays on top of other content */
+    }
+
+/* Navbar elements */
+.navbar-elements {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Links inside the navbar */
+/* Apply the new font family to all hyperlinks */
+.navbar-elements li a {
+    font-family: "Roboto Condensed", Helvetica, sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 15px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+}
+
+/* Hover effect for navbar links */
+.navbar-elements li a:hover {
+    background-color: #62a8a1;
+    color: #f4f4f4;
+}
+
+
+/* Hover effect for navbar links */
+.navbar-elements li a:hover {
+    background-color: #62a8a1; /* Slightly lighter blue on hover */
+    color: #f4f4f4;
+}
+
+/* Responsive layout: align navbar elements vertically on small screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-elements {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+}  
     </style>
 
 </head>
 
 <body>
-
+    <nav>
+        <ul class="navbar-elements">
+            <h4 style="color: white; margin-bottom: 0px;">Terratales</h4>
+            <li><a href="#head" style="margin-left:800px ;">About</a></li>
+            <li><a href="#Problem">Problem</a></li>
+            <li><a href="#Map">Map</a></li>
+            <li><a href="#Footer">Your Impact</a></li>
+            <li><a href="game.html" style="margin-left: 10px;">Play</a></li>
+        </ul>
+    </nav>
     <!-- Header Section with Image Background -->
     <header id="head" class="head" >
         <div class="centered-container">
@@ -547,10 +616,10 @@
     </header>
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Roboto:100,300,400,700,900' rel='stylesheet' type='text/css'>
-<div class="cards-container">
+<div class="cards-container" id="Problem">
     <div class="card-wrapper">
 
-        <div class="card">
+        <div class="card" >
             <img src="photos/what.jpg" alt="Climate Change" class="card__background">
             <div class="card__content">
                 <h2 class="card__title">Our Problem</h2>
@@ -581,7 +650,8 @@
         </div>
     </div>
 </div>
-<h1 style="margin-left: 600px;">Choose place</h1>
+<div id="Map">
+<h1 style="margin-left: 600px; ">Choose place</h1>
 
 <div class="distribution-map">
     <!-- This was broken for a while because image hosts are annoying, so now it's a data uri. Sorry :( -->
@@ -593,7 +663,7 @@
             <div class="centered-y">
                 <h3 style="color: white;">Egypt</h3>
                 <p style="margin-bottom: 20px;">Brief About Egypt</p>
-                <a href="#" class="button" style=" color: white;">Choose Country</a>
+                <a href="egypt.html" class="button" style=" color: white;">Choose Country</a>
             </div>
         </div>
     </button>
@@ -602,7 +672,7 @@
             <div class="centered-y">
                 <h3 style="color: white;">Brazil</h3>
                 <p style="margin-bottom: 20px;color: white;">Brief About Brazil</p>
-                <a href="#" class="button" style=" color: white;">Choose Country</a>
+                <a href="brazil.html" class="button" style=" color: white;">Choose Country</a>
             </div>
         </div>
     </button>
@@ -611,16 +681,17 @@
             <div class="centered-y">
                 <h3 style="color: white;">Germany</h3>
                 <p style="margin-bottom: 20px; color: white;">Brief About Germany</p>
-                <a href="#" class="button" style=" margin:0px; color: white;">Choose Country</a>
+                <a href="germany.html" class="button" style=" margin:0px; color: white;">Choose Country</a>
             </div>
         </div>
     </button>
 </div>
+</div>
     
 
-    <div class="footer" >
+    <div class="footer" id="Footer">
         <div style="background-color: #62a8a1; height:300px; ">
-            <h4 style="padding: 50px; padding-bottom:0px; margin-bottom: 5px;">About us:</h4> 
+            <h4 style="padding: 50px; padding-bottom:0px; margin-bottom: 5px;">Your Impact:</h4> 
             <p style="padding-left: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Quaerat illum esse nisi libero fugiat,<br> officiis inventore sint, nostrum accusamus, <br> similique delectus hic impedit sit blanditiis. <br> Cumque impedit provident fugit suscipit!</p>
             <a href="game.html" class="button" style=" margin:0px; background-color: white; color:#62a8a1;margin-left: 60px;">Our Game</a>
         </div>
