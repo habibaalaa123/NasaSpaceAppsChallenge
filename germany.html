@@ -8,102 +8,434 @@
     
     <title>Germany</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Roboto Condensed", sans-serif; /* Apply the font globally */
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Condensed", sans-serif;
+        /* Apply the font globally */
       }
-
+  
       img {
         width: 100%;
       }
-
+  
       #general {
-            height: 100vh; /* Full height of the viewport */
-            width: 100vw;  /* Full width of the viewport */
-            background-image: url('photos/Web%20Picture/Germany/germanyflag.jpeg');
-            background-size: cover; /* Ensures the image covers the div */
-            background-position: center; /* Centers the background image */
-            background-repeat: no-repeat; /* Prevents repeating */
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            color: white;
+        height: 100vh;
+        /* Full height of the viewport */
+        width: 100vw;
+        /* Full width of the viewport */
+        background-image: url('photos/Web%20Picture/Germany/germanyflag.jpeg');
+        background-size: cover;
+        /* Ensures the image covers the div */
+        background-position: center;
+        /* Centers the background image */
+        background-repeat: no-repeat;
+        /* Prevents repeating */
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        color: white;
+      }
+  
+      .centerer {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        margin-top: -140px;
+      }
+  
+  
+      .window {
+        display: flex;
+        justify-content: center;
+        font-size: 18px;
+        font-family: 'Quicksand', sans-serif;
+      }
+  
+      .flex-cont {
+        height: 280px;
+        width: 500px;
+        position: absolute;
+      }
+  
+      .title {
+        line-height: 20px;
+        position: absolute;
+        font-weight: 300;
+        color: #3d9970;
+      }
+  
+      .site-name {
+        font-weight: 400;
+        color: #39c6d6;
+        padding: 5px 12px 5px 12px;
+        background-color: #333333;
+        border-radius: 30px;
+        box-shadow: 0px 0px 50px #111111;
+        margin-left: 3px;
+      }
+  
+      .columns {
+        margin: 0px;
+        top: 60px;
+        position: absolute;
+      }
+  
+      .name-column {
+        position: absolute;
+        white-space: nowrap;
+      }
+  
+      .name {
+        color: #AAAAAF;
+        line-height: 50px;
+        font-weight: 400;
+      }
+  
+      .name ul {
+        list-style-type: none;
+        padding: 0;
+      }
+  
+      .bar-column {
+        left: 140px;
+        top: 38px;
+        position: absolute;
+        display: inline-block;
+      }
+  
+      .bar {
+        height: 8px;
+        width: 260px;
+        border-radius: 4px;
+        background-color: #d7dbe4;
+        position: absolute;
+      }
+  
+      .fill {
+        height: 8px;
+        border-radius: 4px;
+        background-color: #3d9970;
+        box-shadow: 0px 0px 30px #39c6d6;
+        position: absolute;
+      }
+  
+      .fill-u {
+        width: 140px;
+        animation-name: filling-u;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: initial;
+      }
+  
+      @keyframes filling-u {
+        0% {
+          box-shadow: 0px 0px 0px #39c6d6;
+          width: 0px;
         }
-
-        /* Inner content style */
-        .content {
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
-            padding: 20px;
-            max-width: 800px;
-            text-align: left;
-            margin-top: 100px; /* Moves the text box down by 50px */
+  
+        100% {
+          box-shadow: 0px 0px 30px #39c6d6;
+          width: 180px;
         }
-
-        .figure-container {
-            display: flex;
-            justify-content: center; /* Space out the cards evenly */
-            gap: 20px; /* Adds space between cards */
-            padding: 20px;
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+      }
+  
+      .c-bar-p {
+        margin-top: 50px;
+      }
+  
+      .fill-p {
+        width: 50px;
+        animation-name: filling-p;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: initial;
+      }
+  
+      @keyframes filling-p {
+        0% {
+          box-shadow: 0px 0px 0px #39c6d6;
+          width: 0px;
         }
-
-        figure {
-            display: grid;
-            border-radius: 1rem;
-            overflow: hidden;
-            cursor: pointer;
-            width: 250px; /* Fix the width of each card */
+  
+        100% {
+          box-shadow: 0px 0px 30px #39c6d6;
+          width: 50px;
         }
-
-        figure > * {
-            grid-area: 1/1;
-            transition: .4s;
+      }
+  
+      .c-bar-ns {
+        margin-top: 100px;
+      }
+  
+      .fill-ns {
+        width: 11px;
+        animation-name: filling-ns;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: initial;
+      }
+  
+      @keyframes filling-ns {
+        0% {
+          box-shadow: 0px 0px 0px #39c6d6;
+          width: 0px;
         }
-
-        figure img {
-            width: 300px; /* Ensure images take full width of the card */
-            height: 350px;
+  
+        100% {
+          box-shadow: 0px 0px 30px #39c6d6;
+          width: 130px;
         }
-
+      }
+  
+      .c-bar-br {
+        margin-top: 150px;
+      }
+  
+      .fill-br {
+        width: 17px;
+        animation-name: filling-br;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: initial;
+      }
+  
+      @keyframes filling-br {
+        0% {
+          box-shadow: 0px 0px 0px #39c6d6;
+          width: 0px;
+        }
+  
+        100% {
+          box-shadow: 0px 0px 30px #39c6d6;
+          width: 190px;
+        }
+      }
+  
+      .num-column {
+        left: 430px;
+        position: absolute;
+      }
+  
+      .number {
+        color: #727681;
+        line-height: 50px;
+        font-weight: 300;
+        animation-name: fade-in;
+        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-iteration-count: initial;
+      }
+  
+      .number ul {
+        list-style-type: none;
+        padding: 0;
+      }
+  
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+  
+        100% {
+          opacity: 1;
+        }
+      }
+  
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Two columns side by side */
+        gap: 50px;
+        /* Gap between the items */
+        margin: 50px auto;
+        width: 90%;
+        /* Responsive container */
+        max-width: 1300px;
+      }
+  
+      /* General card styling */
+      .general {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        display: flex;
+        align-items: flex-start;
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 400px;
+        padding: 20px;
+      }
+  
+      .general:hover {
+        transform: translateY(-10px);
+        /* Lifts the card slightly on hover */
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+      }
+  
+      /* Styling for the background image */
+      .general::before {
+        content: "";
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+      }
+  
+      .general:hover::before {
+        opacity: 0.8;
+        /* Changes background opacity on hover */
+      }
+  
+  
+  
+      /* Overlay to darken the image */
+      .dark-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+  
+      /* Content inside the card */
+      .content {
+        position: relative;
+        z-index: 2;
+        color: white;
+      }
+  
+      .content h2 {
+        margin-bottom: 10px;
+      }
+  
+      .content h4 {
+        margin: 0;
+        line-height: 1.6;
+      }
+  
+      /* Image styling inside each section */
+      .general img {
+        max-width: 100%;
+        max-height: 300px;
+        object-fit: contain;
+        margin-top: 20px;
+        transition: transform 0.3s ease;
+      }
+  
+      .general:hover img {
+        transform: scale(1.05);
+        /* Slightly zooms in the image on hover */
+      }
+  
+      /* Paragraph under the image */
+      .general p {
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+      }
+  
+      /* Responsive behavior */
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 1fr;
+          /* Stacks the columns on smaller screens */
+        }
+  
+        .general {
+          height: auto;
+          /* Allow height to grow with content */
+        }
+      }
+  
+      /* Inner content style */
+      .content {
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Semi-transparent background for text */
+        padding: 20px;
+        max-width: 800px;
+        text-align: left;
+        margin-top: 100px;
+        /* Moves the text box down by 50px */
+      }
+  
+      .figure-container {
+        display: flex;
+        justify-content: center;
+        /* Space out the cards evenly */
+        gap: 20px;
+        /* Adds space between cards */
+        padding: 20px;
+        flex-wrap: wrap;
+        /* Allows wrapping on smaller screens */
+      }
+  
+      figure {
+        display: grid;
+        border-radius: 1rem;
+        overflow: hidden;
+        cursor: pointer;
+        width: 250px;
+        /* Fix the width of each card */
+      }
+  
+      figure>* {
+        grid-area: 1/1;
+        transition: .4s;
+      }
+  
+      figure img {
+        width: 300px;
+        /* Ensure images take full width of the card */
+        height: 350px;
+      }
+  
+      figure figcaption {
+        display: grid;
+        align-items: end;
+        font-family: sans-serif;
+        font-size: 2.3rem;
+        font-weight: bold;
+        color: #0000;
+        padding: .75rem;
+        background: var(--c, #0009);
+        clip-path: inset(0 var(--_i, 100%) 0 0);
+        -webkit-mask:
+          linear-gradient(#000 0 0),
+          linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        -webkit-mask-clip: text, padding-box;
+        margin: -1px;
+      }
+  
+      figure:hover figcaption {
+        --_i: 0%;
+      }
+  
+      figure:hover img {
+        transform: scale(1.2);
+      }
+  
+      @supports not (-webkit-mask-clip: text) {
         figure figcaption {
-            display: grid;
-            align-items: end;
-            font-family: sans-serif;
-            font-size: 2.3rem;
-            font-weight: bold;
-            color: #0000;
-            padding: .75rem;
-            background: var(--c, #0009);
-            clip-path: inset(0 var(--_i,100%) 0 0);
-            -webkit-mask:
-                linear-gradient(#000 0 0),
-                linear-gradient(#000 0 0);
-            -webkit-mask-composite: xor;
-            -webkit-mask-clip: text, padding-box;
-            margin: -1px;
+          -webkit-mask: none;
+          color: #fff;
         }
-
-        figure:hover figcaption {
-            --_i: 0%;
-        }
-
-        figure:hover img {
-            transform: scale(1.2);
-        }
-
-        @supports not (-webkit-mask-clip: text) {
-            figure figcaption {
-                -webkit-mask: none;
-                color: #fff;
-            }
-        }
-
+      }
+  
       p {
         text-align: center;
       }
-
+  
       nav {
         background-color: #00322e;
         padding: 10px 20px;
@@ -115,7 +447,7 @@
         top: 0;
         z-index: 1000;
       }
-
+  
       .navbar-elements {
         list-style-type: none;
         margin: 0;
@@ -124,7 +456,7 @@
         align-items: center;
         gap: 20px;
       }
-
+  
       .navbar-elements li a {
         font-family: "Roboto Condensed", Helvetica, sans-serif;
         color: #ffffff;
@@ -135,24 +467,24 @@
         transition: background-color 0.3s, color 0.3s;
         border-radius: 4px;
       }
-
+  
       .navbar-elements li a:hover {
         background-color: #62a8a1;
         color: #f4f4f4;
       }
-
+  
       @media (max-width: 768px) {
         nav {
           flex-direction: column;
           align-items: flex-start;
         }
-
+  
         .navbar-elements {
           flex-direction: column;
           gap: 10px;
         }
       }
-
+  
       h1,
       h2,
       h3,
@@ -164,42 +496,42 @@
         font-family: "Roboto Condensed", Helvetica, sans-serif;
         font-weight: 300;
       }
-
+  
       h1 {
         font-size: 36pt;
       }
-
+  
       h2 {
         font-size: 24pt;
       }
-
+  
       h3 {
         font-size: 18pt;
       }
-
+  
       h4 {
         font-size: 16pt;
       }
-
+  
       h5 {
         font-size: 14pt;
       }
-
+  
       h6 {
         font-size: 12pt;
       }
-
+  
       p {
         font-size: 12pt;
         margin-bottom: 12pt;
       }
-
+  
       strong {
         font-weight: 900;
         font-family: "Roboto Condensed", Helvetica, sans-serif;
         color: #f2f2f2;
       }
-
+  
       a {
         transition: color 0.25s ease-in-out;
         font-family: "Roboto Condensed", Helvetica, sans-serif;
@@ -207,15 +539,158 @@
         text-decoration: none;
         color: rgb(175, 225, 250);
       }
-
+  
       a:visited {
         color: rgb(175, 225, 250);
       }
-
+  
       li.active a,
       a:hover,
       a:active {
         color: #f2f2f2;
+      }
+  
+  
+      /* Column styling */
+      .column {
+        flex: 1 1 45%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        /* Center align */
+        align-items: center;
+        /* Center align */
+      }
+  
+      /* Card styling */
+      .card {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+        width: 100%;
+        /* Ensure card takes full width of column */
+      }
+  
+      /* Hover effect for card */
+      .card:hover {
+        transform: scale(1.02);
+      }
+  
+      /* Background image and overlay */
+      .card::before {
+        content: "";
+  
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+  
+      /* Dark overlay */
+      .card::after {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+  
+      /* Content inside the card */
+      .content1 {
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+        color: white;
+        text-align: justify;
+        /* Justify text for clarity */
+        line-height: 1.6;
+        /* Improve readability */
+        margin: 0;
+        /* Remove default margin */
+        font-size: 16px;
+        /* Set font size */
+      }
+  
+      /* Wave effect */
+      .wave {
+        height: 20px;
+        /* Adjust height of the wave */
+        background: rgba(255, 255, 255, 0.2);
+        clip-path: polygon(0 100%, 50% 80%, 100% 100%, 100% 0, 0 0);
+        position: relative;
+        z-index: 2;
+        margin-top: -10px;
+        /* Adjust for overlap */
+      }
+  
+      /* Image styling */
+      .image-container {
+        position: relative;
+        display: flex;
+        /* Flexbox for centering */
+        flex-direction: column;
+        /* Stack image and caption */
+        align-items: center;
+        /* Center align */
+      }
+  
+      .image-container img {
+        max-width: 100%;
+  
+        object-fit: contain;
+        border-radius: 10px;
+        /* Add rounded corners to the image */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        /* Shadow for image */
+        transition: transform 0.3s;
+        /* Adding hover effect */
+        margin-bottom: 10px;
+        /* Space between image and caption */
+      }
+  
+      /* Hover effect for image */
+      .image-container img:hover {
+        transform: scale(1.05);
+        /* Slightly enlarge on hover */
+      }
+  
+      /* Image caption */
+      .image-caption {
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        /* Emphasize caption */
+        font-size: 18px;
+        /* Larger caption font */
+      }
+  
+      .row-box {
+        height: 200px;
+        /* Adjust height as needed */
+        margin-bottom: 20px;
+        background-color: #f8f9fa;
+        /* Light background */
+        border: 2px solid #b98d1a;
+        /* Border color */
+        border-radius: 8px;
+        /* Rounded corners */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* Space between columns */
+        padding: 20px;
+        /* Padding for inner content */
+        font-size: 24px;
+        /* Adjust font size as needed */
       }
     </style>
   </head>
@@ -226,6 +701,7 @@
         <h4 style="color: white; margin-bottom: 0px; margin-top:10px ;">Terratales</h4>
         <li><a href="#general" style="margin-left: 1000px">General</a></li>
         <li><a href="#time-line">Time Line</a></li>
+        <li><a href="index.html#Map">Map</a></li>
         <li><a href="game.html" style="margin-left: 10px">Play</a></li>
       </ul>
     </nav>
@@ -235,7 +711,7 @@
           <h2>Germany:</h2>
           <!-- Adding an audio file next to the word "Egypt" -->
           <audio controls style="margin-left:400px ;">
-              <source src="photos\enhanced_Brazil.opus" type="audio/mpeg" ">
+              <source src="photos\German .m4a" type="audio/mpeg" ">
               Your browser does not support the audio element.
           </audio>
         </div>
@@ -288,20 +764,82 @@ I know Brazil has all that biodiversity, but my strength lies in technology. <br
         </div>
     </div>
     
-    <div class="general" id="2010" style="margin-bottom: 50px; position: relative; margin-top: 100px; display: flex; align-items: flex-start; width: 1300px; margin-left: auto; margin-right: auto; border-radius: 10px; overflow: hidden;">
-        <div style="background-image: url(../photos/Web%20Picture/Germany/germany.jpeg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 0;"></div>
-        <div style="background-color: rgba(0, 0, 0, 0.5); width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;"></div> <!-- Dark overlay -->
-        
-        <div style="position: relative; z-index: 2; padding: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px;">
-            <h2 style="margin-bottom: 0px; color: white;">2011-2015:</h2>
-            <h4 style="text-align: left; color: white;"> 
-                "A major turning point came in 2011 with the Fukushima <br> nuclear disaster. I decided to phase out nuclear power <br> for safety reasons, but that meant turning back to coal <br> and natural gas, which made my emissions go up for a while. <br> Then came Dieselgate in 2015, when one of my biggest automakers <br> was caught cheating emissions tests. <br> This scandal really hit hard, but it led to stricter standards <br> and pushed me to embrace electric vehicles more."
-            </h4>
+    <div class="container" style="display: flex; flex-wrap: wrap; gap: 50px; max-width: 1300px; margin: 100px auto;">
+      
+  
+      
+  
+      <!-- Second Row -->
+      <div class="col" style="flex: 1 1 45%; position: relative;">
+        <div class="general" id="2010"
+          style="display: block; background-image: url(photos/Web%20Picture/Brazil/567673.jpg) ; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <h2 style="margin-bottom: 10px; color: white;">2011-2015:</h2>
+          <p style="text-align: justify; color: white; line-height: 1.5;">
+            This period was marked by significant developments in conservation efforts and carbon management. Key
+            initiatives
+            were introduced to further protect biodiversity while addressing the challenges posed by climate change.
+          </p>
         </div>
-        <div style="z-index: 2; margin-left: 20px; display: block;">
-            <img src="photos/2010 egypt npp.png" alt="" style="max-width: 100%; max-height: 300px; object-fit: contain; margin-top: 100px;">
-            <p style="color: white;">Germany 2011 - 2015</p>
+      </div>
+  
+      <div class="col" style="flex: 1 1 45%; position: relative;">
+        <div class="general"
+          style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);">
+          <div class="centerer">
+            <div class="window">
+              <div class="flex-cont">
+                <h2 class="title" style="color: #333;">Statistics from our data:</h2>
+                <div class="columns">
+                  <div class="name-column">
+                    <div class="name">
+                      <ul>
+                        <li>NPP</li>
+                        <li>NBE</li>
+                        <li>Fire emissions</li>
+                        <li>Wood fuel</li>
+                      </ul>
+                    </div>
+                  </div>
+  
+                  <div class="bar-column">
+                    <div class="bar u">
+                      <div class="fill fill-u"></div>
+                    </div>
+                    <div class="c-bar-p">
+                      <div class="bar p">
+                        <div class="fill fill-p"></div>
+                      </div>
+                    </div>
+                    <div class="c-bar-ns">
+                      <div class="bar ns">
+                        <div class="fill fill-ns"></div>
+                      </div>
+                    </div>
+                    <div class="c-bar-br">
+                      <div class="bar br">
+                        <div class="fill fill-br"></div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="num-column">
+                    <div class="number">
+                      <ul>
+                        <li>4.452</li>
+                        <li>1.211</li>
+                        <li>0.002</li>
+                        <li>0.015</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+  
+      
     </div>
     
     <div class="general" id="2015" style="margin-bottom: 50px; position: relative; margin-top: 100px; display: flex; align-items: flex-start; width: 1300px; margin-left: auto; margin-right: auto; border-radius: 10px; overflow: hidden;">
