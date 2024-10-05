@@ -30,6 +30,39 @@
             position: relative;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            box-sizing: border-box;
+            margin: 30px 128px;
+            gap: 48px;
+            font-size: 16px;
+        }
+
+        a {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            font-family: 'Rubik', sans-serif;
+            color: #ece0c8;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+        }
+
+        a:not(.buy, .buy-cta, .learn) {
+            width: 100px;
+        }
+
+        a:hover:not(.buy, .buy-cta, .learn) {
+            transition: all 0.2s ease-in-out;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 0 8px var(--light-color);
+        }
+
         .dude-wrapper {
             position: absolute;
             display: flex;
@@ -73,8 +106,8 @@
             font-size: 64px;
             margin-bottom: 20px;
             word-spacing: 10px;
-            
-          
+
+
         }
 
         h3 {
@@ -86,7 +119,7 @@
 
         .main-container {
             position: absolute;
-            top: 15%;
+            top: 5%;
             text-align: center;
             z-index: 2;
         }
@@ -102,7 +135,7 @@
             cursor: pointer;
             width: 350px;
             max-width: 350px;
-            
+
             padding: 20px;
             background: #43877e;
             border: 1px solid #54b8aa;
@@ -110,7 +143,7 @@
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
             text-align: center;
             color: var(--light-color);
-       
+
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -617,10 +650,16 @@
     </div>
 
     <section>
+
         <div class='dude-wrapper' id="dudeWrapper">
             <div class='dude' id="dude"></div>
         </div>
         <div class="main-container">
+            <nav>
+                <a href="questions.html">Restart</a>
+                <a href="terratales.html">Home</a>
+                <a href="terratales.html#Map">Story</a>
+            </nav>
             <h1 id="text">Your carbon footprint </h1>
             <h3 id="question"></h3>
             <div class="choices-container" id="choices"></div>
@@ -820,12 +859,19 @@
                 currentTransform += stepDistance * (window.innerWidth / 100); // Dude moves right on correct answer
                 scoreElement.textContent = `Score: ${score}`;
                 showFlower(); // Show flower on correct answer
-                dudeWrapper.style.transform = `translateX(${currentTransform}px)`;
+                if (score > 0) {
+                    dudeWrapper.style.transform = `translateX(${currentTransform}px)`;
+                }
+
             } else {
                 score -= 10;
                 currentTransform -= stepDistance * (window.innerWidth / 100); // Dude moves left on wrong answer
                 scoreElement.textContent = `Score: ${score}`;
-                dudeWrapper.style.transform = `translateX(${currentTransform}px)`;
+                if (score >= 0) {
+                    dudeWrapper.style.transform = `translateX(${currentTransform}px)`;
+                }
+
+                
             }
 
             currentQuestionIndex++;
@@ -840,7 +886,7 @@
 
         // Show flowers based on score
         function showFlower() {
-            const flowerIndex = (score / 10) - 1; 
+            const flowerIndex = (score / 10) - 1;
             if (flowerIndex >= 0 && flowerIndex < flowers.length) {
                 flowers[flowerIndex].style.display = "block"; // Show the corresponding flower
             }
