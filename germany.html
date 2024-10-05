@@ -19,71 +19,86 @@
         width: 100%;
       }
 
-      .flexbox {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center; /* Horizontally center the flex items */
-  align-items: center; /* Vertically align items, optional */
-}
+      #general {
+            height: 100vh; /* Full height of the viewport */
+            width: 100vw;  /* Full width of the viewport */
+            background-image: url('photos/Web%20Picture/Germany/germanyflag.jpeg');
+            background-size: cover; /* Ensures the image covers the div */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents repeating */
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            color: white;
+        }
 
-.flex {
-  width: 16%;
-  display: flex;
-  flex-direction: column;
-  padding: 4%;
-  justify-content: center;
-}
+        /* Inner content style */
+        .content {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+            padding: 20px;
+            max-width: 800px;
+            text-align: left;
+            margin-top: 100px; /* Moves the text box down by 50px */
+        }
 
-.flexbottom {
-  border-bottom: 6px solid #009688;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-}
+        .figure-container {
+            display: flex;
+            justify-content: center; /* Space out the cards evenly */
+            gap: 20px; /* Adds space between cards */
+            padding: 20px;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        }
 
-.flextop {
-  border-top: 5px solid #009688;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  position: relative;
-}
+        figure {
+            display: grid;
+            border-radius: 1rem;
+            overflow: hidden;
+            cursor: pointer;
+            width: 250px; /* Fix the width of each card */
+        }
 
-.flextop:before {
-  content: "";
-  width: 1px;
-  height: 250px;
-  background: #009688;
-  position: absolute;
-  left: 0;
-}
+        figure > * {
+            grid-area: 1/1;
+            transition: .4s;
+        }
 
-.flextop:after {
-  content: "";
-  width: 1px;
-  height: 250px;
-  background: #009688;
-  position: absolute;
-  right: 0;
-}
+        figure img {
+            width: 300px; /* Ensure images take full width of the card */
+            height: 350px;
+        }
 
-.flexbottom {
-  box-shadow: inset 0px -20px 0px #03a999;
-}
+        figure figcaption {
+            display: grid;
+            align-items: end;
+            font-family: sans-serif;
+            font-size: 2.3rem;
+            font-weight: bold;
+            color: #0000;
+            padding: .75rem;
+            background: var(--c, #0009);
+            clip-path: inset(0 var(--_i,100%) 0 0);
+            -webkit-mask:
+                linear-gradient(#000 0 0),
+                linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            -webkit-mask-clip: text, padding-box;
+            margin: -1px;
+        }
 
-.flex.flextop {
-  box-shadow: inset 0px 20px 0px #03a999;
-}
+        figure:hover figcaption {
+            --_i: 0%;
+        }
 
+        figure:hover img {
+            transform: scale(1.2);
+        }
 
-      .stepNumber {
-        width: 100%;
-        text-align: center;
-        border: 1px solid orange;
-        border-radius: 50px 0px 50px 0px;
-        background: orange;
-        color: white;
-      }
+        @supports not (-webkit-mask-clip: text) {
+            figure figcaption {
+                -webkit-mask: none;
+                color: #fff;
+            }
+        }
 
       p {
         text-align: center;
@@ -214,75 +229,41 @@
         <li><a href="game.html" style="margin-left: 10px">Play</a></li>
       </ul>
     </nav>
-    <div id="general" style="margin-top:100px; display: flex; align-items: flex-start; margin-top: 100px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 1300px; margin-left: auto; margin-right: auto;">
-        <div style="margin-right: 20px;">
-            <h2 style="margin-bottom: 0px;">Germany:</h2>
-            <h4 style="text-align: left;">
-                Hey, I’m Germany! <br>
+    <div id="general">
+      <div class="content">
+          <h2>Germany:</h2>
+          <h4 style="text-align: left;">
+            Hey, I’m Germany! <br>
 
 I know Brazil has all that biodiversity, but my strength lies in technology. <br> I’ve been working hard on using solar and wind energy to reduce harmful emissions. <br> This is something I’m proud of, and it gives me an edge over the countries in the South, <br> where fossil fuels are still more common. I’ve faced a lot of environmental challenges <br> over the years, like the Hambach Forest situation, where illegal deforestation <br> affected my ability to absorb carbon. But I keep pushing forward with technology and <br> innovation to cut down on emissions and protect the environment.
 
-            </h4>
-        </div>
-        <div style="width: 400px; height: 400px; ">
-            <img src="photos\b032c34ffedf265756433929ed3363e4.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
+        </h4>
+      </div>
     </div>
     
     
-    <div class="flexbox" id="time-line" style="margin-top: 50px; width: 1500px;">
-      <div class="flex flexbottom">
-        <a href="#2005" >
-            <h2 class="stepNumber">2005-2010</h2>
-        
-        <div class="textbox">
-          <p style="color: black">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure,
-            illo.
-          </p>
-        </div>
-        <div class="imgbox">
-          <img
-            src="https://cdn.pixabay.com/photo/2017/01/10/23/01/seo-1970475_960_720.png"
-            alt=""
-          />
+    <div class="time-line" id="time-line">
+    </div>
+      <h1 style="margin-top: 100px; margin-left: 275px;">Choose time</h1>
+      <div class="figure-container">
+        <a href="#2005">
+          <figure style="--c:#fff5">
+              <img src="photos\Web%20Picture\Germany\renewable.jpg" alt="Mountains">
+              <figcaption>2005 - 2010 </figcaption>
+          </figure>
         </a>
-        </div>
-      </div>
-      <div class="flex flextop">
-        <a href="#2010" style="display: block; text-decoration: none; color: inherit;">
-          <div class="imgbox">
-            <img
-              src="https://cdn.pixabay.com/photo/2017/03/08/14/20/flat-2126876_960_720.png"
-              alt=""
-            />
-          </div>
-          <h2 class="stepNumber">2011-2015</h2>
-          <div class="textbox">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure,
-              illo.
-            </p>
-          </div>
+        <a href="#2010">
+          <figure style="--c:#fff5">
+              <img src="photos\Web%20Picture\Germany\nuclear.jpg" alt="Mountains">
+              <figcaption>2011 - 2015</figcaption>
+          </figure>
         </a>
-      </div>      
-      <div class="flex flexbottom">
-        <a href="#2015" >
-            <h2 class="stepNumber">2016-2020</h2>
-        
-        <div class="textbox">
-          <p style="color: black;">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure,
-            illo.
-          </p>
-        </div>
-        <div class="imgbox">
-          <img
-            src="https://cdn.pixabay.com/photo/2017/01/10/23/01/seo-1970475_960_720.png"
-            alt=""
-          />
+        <a href="#2015">
+          <figure>
+            <img src="photos\Web%20Picture\Germany\deforestration.jpg" alt="Mountains">
+            <figcaption>2016 - 2020</figcaption>
+          </figure>
         </a>
-        </div>
       </div>
     </div>
     <div class="general" id="2005" style="margin-bottom: 50px; position: relative; margin-top: 100px; display: flex; align-items: flex-start; width: 1300px; margin-left: auto; margin-right: auto; border-radius: 10px; overflow: hidden;">
